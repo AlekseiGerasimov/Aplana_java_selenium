@@ -2,7 +2,16 @@ package Pack_calculate;
 
 import java.util.Scanner;
 
+
+/**
+ * @author Герасимов А.А.
+ * @since 1.0
+ * Класс для выполнения арифмитических действий
+ */
 public class Calculator {
+    /**
+     * Конструкторы
+     */
     Calculator(){
         this(0,0);
     }
@@ -10,6 +19,9 @@ public class Calculator {
         this.a = a;
         this.b = b;
     }
+    /**
+     * Метод выполняющий арифмитические действия в зависимости от выбора пользователя
+     */
     public void operations(){
         {
             Scanner scanner = new Scanner(System.in);

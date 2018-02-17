@@ -1,12 +1,20 @@
 package Pack_calculate;
 
+/**
+ * Подключение библиотек
+ */
 import java.util.Locale;
 import java.util.Scanner;
 
+/**
+ * @author Герасимов А.А.
+ * @since 1.0
+ * Точка входа в приложение
+ * @param choice позволяет динамически выбирать необходимое действие
+ */
 public class OperationClass {
     public static void main(String args[]){
         int choice;
-        double a,b;
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.US);
         while(Boolean.TRUE) {

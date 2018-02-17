@@ -1,12 +1,23 @@
 package Pack_calculate;
 
+/**
+ * @author Герасимов А.А.
+ * @since 1.0
+ * Класс для нахождения самого длинного числа
+ */
 public class Array {
+    /**
+     * Конструкторы
+     */
     Array(){
         str = null;
     }
     Array(String []str){
         this.str = str;
     }
+    /**
+     * Метод выполняющий поиск и вывод на экран самого длинного слова
+     */
     void findElements(){
         System.out.print("Result is: ");
         if(str.length == 0) {
