@@ -13,36 +13,28 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 
-//        Проверить, что footer содержит значки социальных сетей
 
-//WebElement draggable = driver.findElement(By.id("element"));
-//        WebElement target = driver.findElement(By.id("container"));
-//        new Actions(driver).dragAndDrop(draggable, target).perform();
+
 public class TestClass {
-    private static WebDriver driver;
+    SberClassPage page;
 
     @Before
     public void setUp(){
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
-        driver.get("http://www.sberbank.ru/ru/person");
+        page = new SberClassPage("http://www.sberbank.ru/ru/person");
     }
 
     @Test
     public void userLogin() throws InterruptedException {
-        driver.findElement(By.xpath("//div[@class='kit-hidden kit-hidden_screenreader']//span[@class='region-list__name']//ancestor::span")).click();
-        TimeUnit.MILLISECONDS.sleep(1000);
-        driver.findElement(By.xpath("//*[@data-id='52']")).click();
-        assertEquals("Нижегородская область",driver.findElement(By.xpath("//*[text()='Нижегородская область']")).getText());
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
-        jse.executeScript("scroll(0, document.body.scrollHeight);");
-        assertEquals(6,driver.findElements(By.xpath("//li[@class='social__item']")).size());
+        page.findAndClick("//div[@class='kit-hidden kit-hidden_screenreader']//span[@class='region-list__name']//ancestor::span");
+        page.waited("//*[@data-id='52']");
+        page.findAndClick("//*[@data-id='52']");
+        page.asserted("Нижегородская область", "//*[text()='Нижегородская область']");
+        page.scrollToFooter();
+        page.asserted_social();
     }
-    //*[@placeholder='Введите название региона']
+
     @After
     public void tearDown() {
-
+        page.quit();
     }
 }
