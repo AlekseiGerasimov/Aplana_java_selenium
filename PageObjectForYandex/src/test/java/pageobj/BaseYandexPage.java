@@ -19,4 +19,8 @@ public class BaseYandexPage {
         marketButton.click();
         return new MarketPage(driver);
     }
+
+    public void quit(){
+        driver.quit();
+    }
 }

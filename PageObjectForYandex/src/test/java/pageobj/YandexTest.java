@@ -1,5 +1,6 @@
 package pageobj;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +13,7 @@ public class YandexTest {
     public void before(){
         WebDriver driver = new ChromeDriver();
         driver.get("https://yandex.ru");
+        driver.manage().window().maximize();
         page = new BaseYandexPage(driver);
     }
 
@@ -28,6 +30,11 @@ public class YandexTest {
         page.clickToMarket().selectCategory("Электроника").productSearch("Наушники и Bluetooth-гарнитуры").setMinPrice("5000").
                 setModels("Beats","Apple").clickButtonToBeginSearch().setNumberOfElementsEquals12().checkNumbersOfElements("12").selectNumberOfElementAndFillTheFieldOfSearch("1").asserted();
 
+    }
+
+    @After
+    public void after(){
+        page.quit();
     }
 
 }
