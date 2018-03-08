@@ -40,7 +40,7 @@ public class BaseSteps {
         }
 
     @cucumber.api.java.After
-    public static void tearDown() throws Exception{
+    public static void tearDown(){
         driver.quit();
     }
 
