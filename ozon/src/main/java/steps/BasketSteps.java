@@ -1,9 +1,7 @@
 package steps;
 
 import io.qameta.allure.Step;
-import org.junit.Assert;
 import pages.BasketPage;
-import pages.CategoryPage;
 
 public class BasketSteps {
     @Step("Проверяем, что в корзине есть выбранный нами товар")

@@ -9,9 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Map;
-import java.util.NoSuchElementException;
 
-public class BasketPage extends BasePage{
+public class BasketPage extends BasePage {
     public BasketPage(){
         PageFactory.initElements(driver,this);
     }

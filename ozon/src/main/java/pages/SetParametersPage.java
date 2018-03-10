@@ -1,18 +1,9 @@
 package pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import javax.swing.*;
-import java.util.List;
-import java.util.StringTokenizer;
 
 public class SetParametersPage extends BasePage {
     public SetParametersPage(){
@@ -43,6 +34,8 @@ public class SetParametersPage extends BasePage {
     @FindBy(xpath="//div[@class='close-icon eDYbanner_close jsCloseBanner']")
     private WebElement bannerclose;
 
+    @FindBy(xpath="//div[@class='close-icon eDYbanner_close jsCloseBanner']")
+    private WebElement sideelement;
 
     public void setMakers(String... name) {
         for (int i = 0; i < name.length; ++i) {
@@ -55,7 +48,7 @@ public class SetParametersPage extends BasePage {
                     menu.findElement(By.xpath(".//a[contains(text(),'".concat(name[i]).concat("')]"))).click();
                 }
                 catch (WebDriverException ex1){
-                    driver.findElement(By.xpath("//div[@class='close-icon eDYbanner_close jsCloseBanner']")).click();
+                    sideelement.click();
                     menu.findElement(By.xpath(".//a[contains(text(),'".concat(name[i]).concat("')]"))).click();
                 }
             }

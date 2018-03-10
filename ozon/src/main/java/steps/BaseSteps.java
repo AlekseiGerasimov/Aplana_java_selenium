@@ -1,7 +1,6 @@
 package steps;
 
 import io.qameta.allure.Attachment;
-import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.OutputType;

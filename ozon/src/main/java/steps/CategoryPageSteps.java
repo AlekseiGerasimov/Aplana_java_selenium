@@ -2,7 +2,6 @@ package steps;
 
 import io.qameta.allure.Step;
 import pages.CategoryPage;
-import pages.MainPage;
 
 public class CategoryPageSteps {
     @Step("Выбираем тип категории {0}")

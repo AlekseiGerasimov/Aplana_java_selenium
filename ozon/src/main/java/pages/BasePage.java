@@ -1,7 +1,6 @@
 package pages;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -13,7 +12,6 @@ import steps.BaseSteps;
 
 import java.util.HashMap;
 import java.util.List;
-
 
 
 public class BasePage {
